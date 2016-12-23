@@ -27,8 +27,6 @@ class ShopalikeServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        Route::get('/xml/shopalike.xml', function(){
-            return "dupa";
-        });
+        Route::get('/xml/shopalike.xml', '\Lari\Shopalike\Controllers\ShopalikeXMLController@index');
     }
 }
