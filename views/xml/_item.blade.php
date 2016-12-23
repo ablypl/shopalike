@@ -1,9 +1,9 @@
 <item>
     <itemId><![CDATA[{{ $item->getId() }}]]></itemId>
     <name><![CDATA[{{ $item->displayName }}]]></name>
-    <topCategory><![CDATA[{{  $item->category->level(0) }}]]></topCategory>
-    <category><![CDATA[{{ $item->category->level(1) }}]]></category>
-    <category2><![CDATA[{{ $item->category->Level(2) }}]]></category2>
+    <topCategory><![CDATA[{{  $item->category->get('path')->get(0) }}]]></topCategory>
+    <category><![CDATA[{{ $item->category->get('path')->get(1)}}]]></category>
+    <category2><![CDATA[{{ $item->get('path')->get(2)}}]]></category2>
     <brand><![CDATA[{{  $item->brand }}]]></brand>
     <description><![CDATA[{{ $item->description }}]]></description>
     <price><![CDATA[{{ $item->price }}]]></price>

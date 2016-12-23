@@ -52,7 +52,7 @@ class ShopalikeItem extends Model
 
     public function hasMethod($name)
     {
-        
+
     }
 
     // Attributes
@@ -74,7 +74,7 @@ class ShopalikeItem extends Model
     }
     public function getCategoryAttribute()
     {
-        
+        return (new ShopAlikeCategory())->get($this->category_id);
     }
 
     public function getCurrencyAttribute()
