@@ -24,4 +24,14 @@ class ShopalikeItem extends Model
     {
         return $this->morphTo();
     }
+
+    public function getItemName()
+    {
+        
+    }
+
+    public function getItemId()
+    {
+        
+    }
 }

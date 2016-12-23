@@ -2,6 +2,7 @@
 
 namespace Lari\Shopalike;
 
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
 class ShopalikeServiceProvider extends ServiceProvider
@@ -26,6 +27,8 @@ class ShopalikeServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        Route::get('/xml/shopalike.xml', function(){
+            return "dupa";
+        });
     }
 }
