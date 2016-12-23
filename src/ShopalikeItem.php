@@ -31,7 +31,7 @@ class ShopalikeItem extends Model
      */
     public function getId()
     {
-        if (method_exists($this->linkable, 'getShopalikeId')) {
+        if ($this->hasMethod('getShopalikeId')) {
             return $this->linkable->getShopalikeId();
         }
         return sprintf(
@@ -43,7 +43,7 @@ class ShopalikeItem extends Model
 
     public function isOnSale()
     {
-        if (method_exists($this->linkable, 'isOnSale')) {
+        if ($this->hasMethod('isOnSale')) {
             return $this->linkable->isOnSale();
         }
         
@@ -52,7 +52,7 @@ class ShopalikeItem extends Model
 
     public function hasMethod($name)
     {
-
+        return method_exists($this->linkable, $name);
     }
 
     // Attributes
@@ -61,7 +61,7 @@ class ShopalikeItem extends Model
         if (!empty($this->name)) {
             return $this->name;
         }
-        if (method_exists($this->linkable, 'getShopalikeName')) {
+        if ($this->hasMethod('getShopalikeName')) {
             return $this->linkable->getShopalikeName();
         }
 
@@ -84,10 +84,7 @@ class ShopalikeItem extends Model
 
     public function getImageAttribute()
     {
-        if(method_exists())
-        {
 
-        }
     }
 
     public function getUrlAttribute()
@@ -97,11 +94,10 @@ class ShopalikeItem extends Model
 
     public function getCostPerClickAttribute()
     {
-        if(method_exists($this->linkable, 'getShopalikeCPC')){
+        if($this->hasMethod('getShopalikeCPC')){
             return $this->linkable->getShopalikeCPC();
         }
 
         return 0.09;
     }
-
 }
