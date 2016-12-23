@@ -20,7 +20,7 @@ class ShopalikeItem extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\MorphTo
      */
-    public function item()
+    public function linkable()
     {
         return $this->morphTo();
     }
