@@ -1,9 +1,18 @@
 <item>
-    <itemId>{!!  cdata($item->getItemId()) !!}</itemId>
-    <name>{!! cdata($item->getItemName()) !!}</name>
-    <topCategory></topCategory>
-    <category></category>
-    <category2></category2>
-    <brand></brand>
-    <description></description>
+    <itemId><![CDATA[{{ $item->getId() }}]]></itemId>
+    <name><![CDATA[{{ $item->displayName }}]]></name>
+    <topCategory><![CDATA[{{  $item->category->level(0) }}]]></topCategory>
+    <category><![CDATA[{{ $item->category->level(1) }}]]></category>
+    <category2><![CDATA[{{ $item->category->Level(2) }}]]></category2>
+    <brand><![CDATA[{{  $item->brand }}]]></brand>
+    <description><![CDATA[{{ $item->description }}]]></description>
+    <price><![CDATA[{{ $item->price }}]]></price>
+    @if($item->isOnSale())
+        <oldPrice><![CDATA[{{ $item->oldPrice }}]]></oldPrice>
+    @endif
+    <currency><![CDATA[{{ $item->currency }}]]></currency>
+    <deliveryTime><![CDATA[{{ $item->deliveryTime }}]]></deliveryTime>
+    <image><![CDATA[{{ asset($item->image)}}]]></image>
+    <deepLink><![CDATA[{{ $item->url }}]]></deepLink>
+    <cpc><![CDATA[{{ $item->costPerClick }}]]></cpc>
 </item>
